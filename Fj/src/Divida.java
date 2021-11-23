@@ -18,10 +18,7 @@ public class Divida {
         return this.valorPago;
     }
 
-    public void setValorPago(double valorPago) {
-        this.valorPago = valorPago;
-    }
-
+  
     public String getCredor() {
         return this.credor;
     }
@@ -38,6 +35,9 @@ public class Divida {
         this.cnpjCredor = cnpjCredor;
     }
     public void paga(double valor){
+        if(valor < 0 ){
+            throw new IllegalArgumentException("Valor inválido para pagamento");
+        }
         if(valor > 100){
             valor = valor -8;
         }
