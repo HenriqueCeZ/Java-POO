@@ -37,5 +37,10 @@ public class Divida {
     public void setCnpjCredor(String cnpjCredor) {
         this.cnpjCredor = cnpjCredor;
     }
-
+    public void paga(double valor){
+        if(valor > 100){
+            valor = valor -8;
+        }
+        this.valorPago += valor;
+    }
 }

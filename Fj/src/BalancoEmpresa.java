@@ -15,10 +15,7 @@ public class BalancoEmpresa {
     public void pagaDivida(String cnpjCredor, double valor){
         Divida divida = dividas.get(cnpjCredor);
         if(divida != null){
-            if(valor > 100){
-                valor = valor - 8;
-            }
-            divida.setValorPago(divida.getValorPago()+valor);
+            divida.paga(valor);
         }
     }
 }
