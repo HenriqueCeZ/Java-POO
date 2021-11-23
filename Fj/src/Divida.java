@@ -1,10 +1,22 @@
 package Fj.src;
 
+import java.util.ArrayList;
+
 public class Divida {
     private double total;
     private double valorPago;
     private String credor;
     private String cnpjCredor;
+    private ArrayList<Pagamento> pagamentos = new ArrayList<Pagamento>();
+    public void setValorPago(double valorPago) {
+        this.valorPago = valorPago;
+    }
+
+    public ArrayList<Pagamento> getPagamentos() {
+        return this.pagamentos;
+    }
+
+   
 
     public double getTotal() {
         return this.total;
@@ -34,7 +46,7 @@ public class Divida {
     public void setCnpjCredor(String cnpjCredor) {
         this.cnpjCredor = cnpjCredor;
     }
-    public void paga(double valor){
+    private void paga(double valor){
         if(valor < 0 ){
             throw new IllegalArgumentException("Valor inválido para pagamento");
         }
@@ -42,5 +54,9 @@ public class Divida {
             valor = valor -8;
         }
         this.valorPago += valor;
+    }
+    public void registra(Pagamento pagamento){
+        this.pagamentos.add(pagamento);
+        this.paga(pagamento.getValor());
     }
 }
