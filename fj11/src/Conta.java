@@ -1,12 +1,12 @@
 public class Conta {
     private double saldo;
-    private String nome;
+    private String titular;
     private int agencia;
 
-    public Conta(double saldo, String nome, int agencia) {
+    public Conta(double saldo, String titular, int agencia) {
         this.saldo = saldo;
-        this.nome = nome;
-        this.agencia = agencia;
+        this.titular = titular;
+        this.agencia =  agencia;
     }
 
     public double getSaldo() {
@@ -15,11 +15,11 @@ public class Conta {
 
 
     public String getNome() {
-        return this.nome;
+        return this.titular;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String titular) {
+        this.titular = titular;
     }
 
     public int getAgencia() {
@@ -30,8 +30,13 @@ public class Conta {
         this.agencia = agencia;
     }
 
-    public void imprime(){
-        System.out.println(agencia);
-        System.out.println(saldo);
-    }
+   public void sacar(double valor) {
+       if(saldo >= valor){
+           this.saldo -= valor;
+       }
+
+   }
+   public void depositar(double valor){
+       this.saldo +=valor;
+   }
 }
