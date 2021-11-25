@@ -33,6 +33,8 @@ public class Conta {
    public void sacar(double valor) {
        if(saldo >= valor){
            this.saldo -= valor;
+       }else{
+           throw new RuntimeException("Saldo insuficiente");
        }
 
    }
