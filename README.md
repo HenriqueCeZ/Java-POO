@@ -11,9 +11,11 @@ Aplicando alguns conceitos de POO e Design Patterns
 ## Design Patterns <br> 
 <i>
  
- ✔Strategy
+ ✔ Strategy
 
- ✔Chain of Responsibility
+ ✔ Chain of Responsibility
+ 
+ ✔ TemplateMethod
 
  
 
